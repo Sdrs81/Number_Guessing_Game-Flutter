@@ -33,20 +33,29 @@ class _AnasayfaState extends State<Anasayfa> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home page",),
+        title: Text("Home page",style: TextStyle(color: Colors.pinkAccent),),
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text("Guess The Number !",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Colors.pinkAccent),),
             Image.asset("images/zar_resim.png",color: Colors.deepPurple,),
-            ElevatedButton(
-              child: Text("Start the game"),
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => GuessingPage()));
-              },
+            Text("\"Guess the number that between 0-10\"",style: TextStyle(color: Colors.pinkAccent,fontWeight: FontWeight.bold, fontSize: 18)),
+            SizedBox(
+              height: 50,
+              width: 150,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.pinkAccent,
+                ),
+                child: Text("Start the game",style: TextStyle(fontSize: 15,color: Colors.deepPurple),),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => GuessingPage()));
+                },
+              ),
             ),
+            Text("Powered by Sdrs81",style: TextStyle(color: Colors.deepPurple)),
           ],
         ),
       ),

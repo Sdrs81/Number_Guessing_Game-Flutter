@@ -40,7 +40,17 @@ class _AnasayfaState extends State<Anasayfa> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text("Guess The Number !",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Colors.pinkAccent),),
-            Image.asset("images/zar_resim.png",color: Colors.deepPurple,),
+            GestureDetector(
+              onTap: (){
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  backgroundColor: Colors.deepPurple,
+                  duration: Duration(seconds: 3),
+                  content: Text("Hit the button below, not me!",style: TextStyle(color: Colors.pinkAccent),),
+                  )
+                );
+              },
+                child: Image.asset("images/zar_resim.png",color: Colors.deepPurple,)
+            ),
             Text("\"Guess the number that between 0-10\"",style: TextStyle(color: Colors.pinkAccent,fontWeight: FontWeight.bold, fontSize: 18)),
             SizedBox(
               height: 50,
